@@ -1,4 +1,5 @@
 from kaggle_environments.envs.hungry_geese.hungry_geese import Observation, Configuration, Action, row_col
+import random
 
 def row_col(position: int, columns: int):
     return position // columns, position % columns
@@ -66,10 +67,7 @@ class GreedyAgent:
         action = min(actions, key=actions.get) if any(actions) else random.choice([action for action in Action])
         self.last_action = action
 
-        for d in range(4):
-            if action.name == ['EAST', 'SOUTH', 'WEST', 'NORTH'][d]:
-                return d
-        # return action.name
+        return action.name
 
 cached_greedy_agents = {}
 

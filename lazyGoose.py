@@ -35,8 +35,8 @@ class Global:
 
     def update(observation, configuration):
         Global.roundCnt = observation['step']
-        Global.food = observation['food']
-        Global.geese = observation['geese']
+        Global.food = [row_col(f, configuration.columns) for f in observation['food']]
+        Global.geese = [[row_col(p, configuration.columns) for p in observation['geese'][g]] for g in range(4)]
         Global.playerIndex = observation['index']
         Global.prevMoves = observation['prevActions']
         # if Global.roundCnt > 0:

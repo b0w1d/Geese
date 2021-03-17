@@ -475,6 +475,5 @@ def getStep(playerIndex): # maybe you want to put somebody else's?
 
 def agent(obs_dict, config_dict):
     Global.update(obs_dict, Configuration(config_dict))
-    return getStep(Global.playerIndex)
     return Consts.CODE[getStep(Global.playerIndex)]
 

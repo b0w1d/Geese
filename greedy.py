@@ -72,6 +72,7 @@ class GreedyAgent:
 cached_greedy_agents = {}
 
 def greedy_agent(obs, config):
+    random.seed(7122)
     index = obs["index"]
     if index not in cached_greedy_agents:
         cached_greedy_agents[index] = GreedyAgent(Configuration(config))

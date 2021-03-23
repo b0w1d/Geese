@@ -473,7 +473,7 @@ def getStep(playerIndex): # maybe you want to put somebody else's?
 
     return Decisions.randomFallback(playerIndex)
 
-def agent(obs_dict, config_dict):
+def lazy_agent(obs_dict, config_dict):
     Global.update(obs_dict, Configuration(config_dict))
     return Consts.CODE[getStep(Global.playerIndex)]
 
